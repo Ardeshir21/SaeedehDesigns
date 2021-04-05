@@ -1,0 +1,139 @@
+.padding-4-percent{
+  padding-top: 4%;
+}
+.image-wrapper img {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-filter: brightness(100%);
+}
+
+.image-wrapper :hover img {
+    -webkit-filter: none;
+    filter: none;
+    -webkit-transform: scale(1.09, 1.09);
+    transform: scale(1.09, 1.09);
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#social-footer, #copy-footer {
+  padding-top: 4%;
+  text-align: center;
+}
+#social-footer li {
+  margin-left: 20px;
+}
+
+.footer-logo img {
+  width: 50%;
+}
+
+.owl-nav {
+  display: none;
+}
+
+.nastalig {
+  font-family: IranNastaliq,'IranNastaliq',tahoma;
+  font-size: 25px;
+  direction: rtl;
+  text-align: center;
+}
+.description_1 {
+  font-size: 17px;
+}
+.p-not-bold {
+  font-size: 18px;
+  font-weight: 200;
+  margin: 0;
+}
+
+.span-bold {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+.pozo-social-link i {
+  color: rgba(156, 84, 81, 0.8);
+  transition: all 200ms linear;
+}
+.pozo-social-link i:hover {
+  color: rgba(156, 84, 81, 1);
+  transition: all 200ms linear;
+}
+#request-btn{
+  background-color: rgba(156, 84, 81, 0.8);
+  border-color: rgba(156, 84, 81, 1);
+  width: 200px;
+  transition: all 200ms linear;
+}
+#request-btn:hover {
+  background-color: rgba(156, 84, 81, 1);
+  transition: all 200ms linear;
+}
+
+#back-btn {
+  color: rgba(156, 84, 81, 0.7);
+  font-size: 21px;
+  transition: all 200ms linear;
+}
+
+#back-btn i{
+  color: rgba(156, 84, 81, 1);
+  font-size: 21px;
+  opacity: 0;
+  padding: 0 30px 0 30px;
+  transition: all 200ms linear;
+}
+#back-btn:hover i {
+  opacity: 1;
+  transition: all 200ms linear;
+}
+#back-btn:after {
+  position: absolute;
+  bottom: -5px;
+  left: 97px;
+  width: 132px;
+  height: 2px;
+  content: '';
+  background-color: #9c5451;
+  opacity: 0;
+  transition: all 200ms linear;
+}
+#back-btn:hover {
+  color: rgba(156, 84, 81, 1);
+  transition: all 200ms linear;
+}
+#back-btn:hover:after {
+  bottom: -2px;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 767px){
+  .nastalig {
+    font-family: IranNastaliq,'IranNastaliq',tahoma;
+    font-size: 16px;
+    direction: rtl;
+    text-align: center;
+  }
+  .p-not-bold {
+    font-size: 15px;
+    font-weight: 200;
+    margin: 0;
+  }
+
+  .span-bold {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .description_1 {
+    font-size: 15px;
+  }
+  #logo-footer-mobile{
+    text-align: center;
+  }
+}

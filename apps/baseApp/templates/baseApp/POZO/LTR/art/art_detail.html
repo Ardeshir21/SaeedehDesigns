@@ -1,0 +1,107 @@
+{% extends "baseApp/POZO/LTR/art/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{% static "baseApp/POZO/LTR/css/owl.carousel.css" %}">
+  <link rel="stylesheet" href="{% static "baseApp/POZO/LTR/css/owl.theme.default.css" %}">
+{% endblock head_extra %}
+
+
+{% block body_content %}
+<div class="container pt-130">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="owl-carousel">
+          {% for item in the_art.artImages.all %}
+            <img id="main-image-art" class="img-fluid" src="{{item.image.url}}" alt="">
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="mt-20"><span>{{the_art.title}}</span></h2>
+        <!-- Description 1 -->
+        <div class="row">
+          <div class="col">
+            {% if the_art.description_1 %}
+            <p class="description_1">{{the_art.description_1}}</p>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Description Farsi -->
+        <div class="row ustify-content-md-center mt-40 mb-30">
+          <div class="col">
+            {% if the_art.description_fa_1 %}
+            <p class="nastalig">{{the_art.description_fa_1}}</p>
+            {% endif %}
+          </div>
+          <div class="col">
+            {% if the_art.description_fa_2 %}
+            <p class="nastalig">{{the_art.description_fa_2}}</p>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Description 2 -->
+        <div class="row mb-60">
+          <div class="col">
+            {% if the_art.description_2 %}
+            <p>{{the_art.description_2}}</p>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Request Item -->
+        <div class="row mt-120">
+          <div class="col">
+            {% if the_art.original_availability %}
+              <p class="p-not-bold">Original Art: <span class="span-bold"> Available</span></p>
+            {% else %}
+              <p class="p-not-bold">Original Art: <span class="span-bold"> Not Available</span></p>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Availabality -->
+        <div class="row">
+          <div class="col">
+            {% if the_art.original_availability %}
+              <p class="p-not-bold">Copy & Print: <span class="span-bold"> Available</span></p>
+            {% else %}
+              <p>Copy & Print: <span> Not Available</span></p>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Request -->
+        <div class="row mt-40">
+          <div class="col text-center">
+            <a href="#" id="request-btn" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Request</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center mb-60 mt-120">
+      <div class="col-md-auto" style="position:relative; right:5px;">
+        <a href="{% url "baseApp:art_portfolio" %}" id="back-btn" role="button" aria-disabled="true"> <i class="fad fa-long-arrow-left"></i> Back to Gallery</a>
+      </div>
+    </div>
+</div>
+{% endblock body_content %}
+
+
+{% block body_JS %}
+  <script src="{% static "baseApp/POZO/LTR/js/plugins/owl.carousel.min.js" %}"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+          items: 1,
+          margin: 0,
+          loop: true,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          smartSpeed: 1000,
+          autoplayHoverPause: true,
+          nav: false,
+      });
+    });
+  </script>
+{% endblock body_JS %}

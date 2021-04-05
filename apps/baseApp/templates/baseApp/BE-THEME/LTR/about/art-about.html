@@ -1,0 +1,148 @@
+{% extends "baseApp/POZO/LTR/art/base-without-pozo-wrapper.html" %}
+{% load static %}
+
+
+
+{% block head_title %}
+  <title>About Me</title>
+  <meta name="description" content="">
+{% endblock head_title %}
+
+
+{% block head_extra %}
+<!-- FONTS -->
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,700,700italic,900'>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cormorant+Garamond:100,200,300,400,400italic,500,700,700italic,900'>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+
+<!-- CSS BE-THEME -->
+<link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/global.css" %}">
+<link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/structure.css" %}">
+<link rel='stylesheet' id='style-static' href="{% static "baseApp/BE-THEME/css/be_style.css" %}">
+<link rel='stylesheet' id='style-static' href="{% static "baseApp/BE-THEME/css/hairdresser3.css" %}">
+<link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/custom.css" %}">
+
+<!-- Revolution Slider -->
+<link rel="stylesheet" type="text/css" href="{% static "baseApp/BE-THEME/plugins/rs-plugin/css/settings.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "baseApp/BE-THEME/plugins/rs-plugin/css/layers.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "baseApp/BE-THEME/plugins/rs-plugin/css/navigation.css" %}">
+
+{% endblock head_extra %}
+
+
+
+
+{% block body_content %}
+
+  {% include "baseApp/BE-THEME/LTR/about/art-about-slider.html" %}
+  {% include "baseApp/BE-THEME/LTR/about/art-about-content.html" %}
+
+{% endblock body_content %}
+
+
+
+{% block body_JS %}
+  <!-- <script src="{% static "baseApp/BE-THEME/js/mfn.menu.js" %}"></script> -->
+  <!-- <script src="{% static "baseApp/BE-THEME/js/jquery.plugins.js" %}"></script> -->
+  <!-- <script src="{% static "baseApp/BE-THEME/js/jquery.jplayer.min.js" %}"></script> -->
+  <!-- <script src="{% static "baseApp/BE-THEME/js/animations/animations.js" %}"></script> -->
+  <!-- <script src="{% static "baseApp/BE-THEME/js/email.js" %}"></script> -->
+  <!-- <script src="{% static "baseApp/BE-THEME/js/scripts.js" %}"></script> -->
+
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/jquery.themepunch.tools.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.video.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.slideanims.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.actions.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.kenburn.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.navigation.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.migration.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.parallax.min.js" %}"></script>
+  <script src="{% static "baseApp/BE-THEME/plugins/rs-plugin/js/extensions/revolution.extension.carousel.min.js" %}"></script>
+
+  <script>
+          var tpj = jQuery;
+
+          var revapi16;
+          tpj(document).ready(function() {
+              if (tpj("#rev_slider_16_1").revolution == undefined) {
+                  revslider_showDoubleJqueryError("#rev_slider_16_1");
+              } else {
+                  revapi16 = tpj("#rev_slider_16_1").show().revolution({
+                      sliderType: "carousel",
+                      sliderLayout: "fullwidth",
+                      dottedOverlay: "none",
+                      delay: 4000,
+                      navigation: {
+                          keyboardNavigation: "off",
+                          keyboard_direction: "horizontal",
+                          mouseScrollNavigation: "off",
+                          onHoverStop: "off",
+                          tabs: {
+                              style: "zeus",
+                              enable: false,
+                              width: 100,
+                              height: 30,
+                              min_width: 100,
+                              wrapper_padding: 0,
+                              wrapper_color: "transparent",
+                              wrapper_opacity: "0",
+                              tmp: '<span class="tp-tab-title">{{title}}</span>',
+                              visibleAmount: 3,
+                              hide_onmobile: true,
+                              hide_under: 480,
+                              hide_onleave: false,
+                              hide_delay: 200,
+                              direction: "horizontal",
+                              span: true,
+                              position: "inner",
+                              space: 1,
+                              h_align: "center",
+                              v_align: "top",
+                              h_offset: 0,
+                              v_offset: 30
+                          }
+                      },
+                      carousel: {
+                          horizontal_align: "center",
+                          vertical_align: "center",
+                          fadeout: "on",
+                          vary_fade: "on",
+                          maxVisibleItems: 3,
+                          infinity: "on",
+                          space: 0,
+                          stretch: "off"
+                      },
+                      responsiveLevels: [1240, 1024, 778, 480],
+                      gridwidth: [800, 640, 480, 480],
+                      gridheight: [720, 720, 480, 360],
+                      lazyType: "none",
+                      parallax: {
+                          type: "scroll",
+                          origo: "enterpoint",
+                          speed: 400,
+                          levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+                      },
+                      shadow: 0,
+                      spinner: "off",
+                      shuffle: "off",
+                      autoHeight: "off",
+                      disableProgressBar: "on",
+                      hideThumbsOnMobile: "off",
+                      hideSliderAtLimit: 0,
+                      hideCaptionAtLimit: 0,
+                      hideAllCaptionAtLilmit: 0,
+                      debugMode: false,
+                      fallbacks: {
+                          simplifyAll: "off",
+                          nextSlideOnWindowFocus: "off",
+                          disableFocusListener: false,
+                      }
+                  });
+              }
+          }); /*ready*/
+      </script>
+
+{% endblock body_JS %}

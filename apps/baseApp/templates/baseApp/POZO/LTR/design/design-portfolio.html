@@ -1,0 +1,35 @@
+{% extends "baseApp/BE-THEME/LTR/design/base.html" %}
+{% load static %}
+
+{% block head_extra %}
+  <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/structure_architect5.css" %}">
+  <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/architect5.css" %}">
+{% endblock head_extra %}
+
+
+{% block body_content %}
+<!-- Projects -->
+<section class="projects pt-130"
+          style="padding-top:160px;padding-bottom:30px;background-color:#191919;">
+    <div class="container">
+        <div class="column mcb-column one column_column">
+            <div class="column_attr align_center clearfix">
+                <h2 style="color:white;">Saeedeh Designs</h2>
+            </div>
+        </div>
+        {% for item in all_designs %}
+          <div class="column mcb-column one-second column_column animate-box" data-animate-effect="fadeInUp">
+            <div class="image-box">
+                <a href="{% url "baseApp:design_detail" slug=item.slug %}">
+                  <img src="{{item.image_main.url}}" alt="">
+                </a>
+                <div class="con">
+                    <h5><a href="{% url "baseApp:design_detail" slug=item.slug %}">{{item.title}}</a></h5>
+                    <a href="{% url "baseApp:design_detail" slug=item.slug %}"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock body_content %}

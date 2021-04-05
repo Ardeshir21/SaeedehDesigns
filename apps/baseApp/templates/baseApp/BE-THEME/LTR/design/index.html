@@ -1,0 +1,109 @@
+{% extends "baseApp/BE-THEME/LTR/design/base.html" %}
+{% load static %}
+
+
+{% block head_title %}
+  <title>Saeedeh Interior Design</title>
+  <meta name="description" content="">
+{% endblock head_title %}
+
+{% block head_extra %}
+<link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/structure_architect5.css" %}">
+<link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/architect5.css" %}">
+{% endblock head_extra %}
+
+
+{% block body_content %}
+  <div id="Content" class="no-padding">
+      <div class="content_wrapper clearfix">
+          <div class="sections_group">
+              <!-- Main Image -->
+              <div class="section mcb-section full-screen bg-cover bg-cover" style="padding-top:0px;padding-bottom:0px;background-color:#6a4835;background-image:url({% static "baseApp/BE-THEME/images/images_architect5/architect-single-portfolio-main-bg.jpg" %});background-repeat:no-repeat;background-position:center;background-attachment:fixed;background-size:cover;-webkit-background-size:cover">
+                  <div class="section_wrapper mcb-section-inner">
+                      <div class="wrap mcb-wrap one valign-top clearfix" style>
+                          <div class="mcb-wrap-inner">
+                              <div class="column mcb-column one column_column">
+                                  <div class="column_attr clearfix align_center">
+                                      <h1 style="color:#f8f8f8;">A fresh vision
+                                          <br> for living spaces</h1>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- About Saeedeh Design -->
+              <div class="section mcb-section" style="padding-top:100px;padding-bottom:50px;background-color:#191919;">
+                  <div class="section_wrapper mcb-section-inner">
+                      <div class="wrap mcb-wrap one valign-top clearfix" style>
+                          <div class="mcb-wrap-inner">
+                              <div class="column mcb-column one column_column">
+                                  <div class="column_attr clearfix">
+                                      <p style="color:#f8f8f8;">
+                                          Mauris rhoncus orci in imperdiet placerat.
+                                      </p>
+                                      <h2 style="color:#f8f8f8;">Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt ut eros a, vulputate consequat odio. Vestibulum vehicula tempor nulla, sed hendrerit urna interdum in. Donec
+                                          et nibh maximus, congue est eu, mattis nunc.</h2>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Featured Images -->
+              <div class="section mcb-section" style="padding-top:50px;padding-bottom:100px;background-color:">
+                  <div class="section_wrapper mcb-section-inner">
+                      <div class="wrap mcb-wrap  one valign-top clearfix" style>
+                          <div class="mcb-wrap-inner">
+                            <!-- Mansonry -->
+                            {% include "baseApp/BE-THEME/LTR/design/mansonry-gallery.html" %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Contact Area -->
+              <div class="section mcb-section equal-height-wrap full-width" style="padding-top:0px;padding-bottom:0px;background-color:">
+                  <div class="section_wrapper mcb-section-inner">
+                      <div class="wrap mcb-wrap one-second valign-middle clearfix" style="background-color:rgba(176, 114, 111, 0.6);background-image:url(images/architect-home-section-pattern-light.png);background-repeat:repeat;background-position:left top;">
+                          <div class="mcb-wrap-inner">
+                              <div class="column mcb-column one-fourth column_placeholder">
+                                  <div class="placeholder">
+                                      &nbsp;
+                                  </div>
+                              </div>
+                              <div class="column mcb-column three-fourth column_column">
+                                  <div class="column_attr clearfix" style="padding:30px 5%;">
+                                      <h2 style="color:#f8f8f8;">Let’s sit down
+                                          <br> and talk about
+                                          <br> your vision</h2>
+                                      <hr class="no_line" style="margin: 0 auto 50px;">
+                                      <!-- Contact -->
+                                      <a href="#" id="request-btn" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Contact Saeedeh</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="wrap mcb-wrap one-second valign-middle bg-cover clearfix" style="background-image:url({% static "baseApp/BE-THEME/images/images_architect5/architect-home-last-section-bg.jpg" %});background-repeat:no-repeat;background-position:center;">
+                          <div class="mcb-wrap-inner">
+                              <div class="column mcb-column one column_divider">
+                                  <hr class="no_line" style="margin: 0 auto 600px;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock body_content %}
+
+
+{% block body_JS %}
+  <script type="text/javascript">
+
+    $('[data-fancybox="images"]').fancybox({
+      protect: true,
+      loop: true,
+    });
+  </script>
+{% endblock body_JS %}

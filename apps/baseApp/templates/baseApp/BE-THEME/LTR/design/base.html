@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    {% block head_title %}
+  		<title>Interior Design</title>
+  		<meta name="description" content="">
+  	{% endblock head_title %}
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+
+    <!-- FONTS -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway:300,400,400italic,500,700,700italic,900'>
+
+    <!-- CSS -->
+    <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/global.css" %}">
+    <link href="{% static "baseApp/POZO/LTR/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "baseApp/POZO/LTR/css/jquery.fancybox.min.css" %}" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/custom.css" %}">
+
+    {% block head_extra %}
+
+  	{% endblock head_extra %}
+
+</head>
+
+<body class="portfolio-template-default single single-portfolio postid-50 color-custom style-simple button-flat layout-full-width if-zoom if-border-hide no-content-padding single-template-builder no-shadows header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
+    <div id="Wrapper" style="padding-bottom:40px;background-color:#191919;">
+        <div id="Header_wrapper" class>
+            <header id="Header">
+                <div id="Top_bar">
+                    <div class="container">
+                        <div class="column one">
+                            <div class="top_bar_left clearfix">
+                                <div class="logo">
+                                    <a id="logo" href="{% url "baseApp:index" %}" data-height="70" data-padding="15">
+                                      <img class="logo-main scale-with-grid" src="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-retina="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-height="100">
+                                      <img class="logo-sticky scale-with-grid" src="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-retina="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-height="25">
+                                      <img class="logo-mobile scale-with-grid" src="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-retina="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-height="25">
+                                      <img class="logo-mobile-sticky scale-with-grid" src="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-retina="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" data-height="25">
+                                    </a>
+                                </div>
+                                <div class="menu_wrapper">
+                                    <nav id="menu">
+                                        <ul id="menu-menu" class="menu menu-main">
+                                            <li>
+                                                <a href="{% url "baseApp:design_index" %}"><span>Home</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url "baseApp:about_me" %}"><span>About</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url "baseApp:design_portfolio" %}"><span>Projects</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url "baseApp:art_index" %}"><span>Art Gallery</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav><a class="responsive-menu-toggle" href="#"><i class="far fa-bars"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        {% block body_content %}
+        <!-- MAIN CONTENT -->
+        {% endblock body_content %}
+
+        <!-- Footer -->
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div id="logo-footer-mobile" class="col-md-4 col-12">
+                      <!-- Logo -->
+                      <a id="logo-footer" class="footer-logo" href="{% url "baseApp:index" %}">
+                        <img src="{% static "baseApp/POZO/LTR/images/logo-w.png" %}" class="logo" alt="">
+                      </a>
+                    </div>
+                    <div class="col-md-4 col-12 padding-4-percent">
+                      <div class="row">
+                        <div class="col-6 text-right">
+                          <li class="pozo-social-icons-item">
+                              <a class="pozo-social-link" target="_blank" href="#">
+                                <i class="fab fa-facebook-square fa-3x"></i>
+                              </a>
+                          </li>
+                        </div>
+                        <div class="col-6 text-left">
+                          <li class="pozo-social-icons-item">
+                              <a class="pozo-social-link" target="_blank" href="https://www.instagram.com/saeedeh.keshvari/">
+                                <i class="fab fa-instagram fa-3x"></i>
+                              </a>
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-12 padding-4-percent">
+                        <p id="copy-footer" class="pozo-copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> <span>Saeedeh</span> All rights reserved</p>
+                        <!-- <p class="pozo-copyright">Developed by: <a href="https://wa.me/905356832320">Ardeshir</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="Side_slide" class="right dark" data-width="250">
+            <div class="close-wrapper">
+                <a href="#" class="close"><i class="far fa-bars"></i></a>
+            </div>
+            <div class="extras">
+                <div class="extras-wrapper"></div>
+            </div>
+            <div class="menu_wrapper"></div>
+        </div>
+        <div id="body_overlay"></div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="{% static "baseApp/BE-THEME/js/jquery-2.1.4.min.js" %}"></script>
+
+    <script src="{% static "baseApp/BE-THEME/js/mfn.menu.js" %}"></script>
+    <script src="{% static "baseApp/BE-THEME/js/jquery.plugins.js" %}"></script>
+    <script src="{% static "baseApp/BE-THEME/js/jquery.jplayer.min.js" %}"></script>
+    <script src="{% static "baseApp/BE-THEME/js/animations/animations.js" %}"></script>
+    <script src="{% static "baseApp/BE-THEME/js/translate3d.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/jquery.fancybox.min.js" %}"></script>
+    <script src="{% static "baseApp/BE-THEME/js/scripts.js" %}"></script>
+
+    {% block body_JS %}
+
+    {% endblock body_JS %}
+
+</body>
+</html>

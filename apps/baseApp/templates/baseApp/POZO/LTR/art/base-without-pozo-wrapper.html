@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="#" />
+
+    {% block head_title %}
+  		<title>Pozo - Creative Template</title>
+  		<meta name="description" content="">
+  	{% endblock head_title %}
+
+    <!-- CSS POZO -->
+    <link href="{% static "baseApp/POZO/LTR/css/animate.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "baseApp/POZO/LTR/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "baseApp/POZO/LTR/css/swiper.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "baseApp/POZO/LTR/css/jquery.fancybox.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "baseApp/POZO/LTR/css/style.css" %}" rel="stylesheet" type="text/css">
+
+    {% block head_extra %}
+
+  	{% endblock head_extra %}
+</head>
+
+<body>
+    <!-- Page Preloader -->
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="#" class="logo" alt=""> </div>
+    </div>
+    <div>
+        <!-- Lines -->
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <!-- Header -->
+        <header>
+            <div class="container pozo-navbar-container">
+                <div class="pozo-navigation-wrap pozo-start-header start-style">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <nav class="navbar navbar-expand-md navbar-light">
+                                    <!-- Logo -->
+                                    <a class="navbar-brand animate-box" data-animate-effect="fadeInUp" href="{% url "baseApp:index" %}">
+                                      <img src="{% static "baseApp/POZO/LTR/images/logo.png" %}" class="logo" alt=""> </a>
+                                    <!-- Menu -->
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                            <li class="nav-item pl-md-0 ml-0 ml-md-4"> <a class="nav-link" href="{% url "baseApp:art_index" %}">Arts Gallery</a></li>
+                                            <li class="nav-item pl-md-0 ml-0 ml-md-4"> <a class="nav-link" href="{% url "baseApp:design_index" %}">Interion Design</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+      {% block body_content %}
+      <!-- MAIN CONTENT -->
+      {% endblock body_content %}
+
+      <!-- Footer -->
+      <footer>
+          <div class="container pozo-footer-container">
+              <div class="row">
+                  <div class="col-md-4">
+                    <!-- Logo -->
+                    <a id="logo-footer" class="footer-logo" href="{% url "baseApp:index" %}">
+                      <img src="{% static "baseApp/POZO/LTR/images/logo.png" %}" class="logo" alt="">
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                      <div class="col-6 text-right">
+                        <li class="pozo-social-icons-item">
+                            <a class="pozo-social-link" target="_blank" href="#">
+                              <i class="fab fa-facebook-square fa-3x"></i>
+                            </a>
+                        </li>
+                      </div>
+                      <div class="col-6 text-left">
+                        <li class="pozo-social-icons-item">
+                            <a class="pozo-social-link" target="_blank" href="https://www.instagram.com/saeedeh.keshvari/">
+                              <i class="fab fa-instagram fa-3x"></i>
+                            </a>
+                        </li>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                      <p id="copy-footer" class="pozo-copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> <span>Saeedeh</span> All rights reserved</p>
+                      <!-- <p class="pozo-copyright">Developed by: <a href="https://wa.me/905356832320">Ardeshir</a></p> -->
+                  </div>
+              </div>
+          </div>
+      </footer>
+    </div>
+    <!-- Js -->
+    <!-- This jQuery is for Be-Theme for used here because of the Mansonry Gallery parts -->
+    <script src="{% static "baseApp/BE-THEME/js/jquery-2.1.4.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/bootstrap.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/modernizr-2.6.2.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/swiper.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/plugins/jquery.fancybox.min.js" %}"></script>
+    <script src="{% static "baseApp/POZO/LTR/js/script.js" %}"></script>
+
+    {% block body_JS %}
+
+    {% endblock body_JS %}
+</body>
+</html>

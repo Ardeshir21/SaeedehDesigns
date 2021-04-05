@@ -1,0 +1,103 @@
+{% extends "baseApp/POZO/LTR/art/base.html" %}
+{% load static %}
+
+
+
+{% block head_title %}
+  <title>Saeedeh Designs</title>
+  <meta name="description" content="">
+{% endblock head_title %}
+
+{% block head_extra %}
+  <!-- CSS BE-THEME -->
+  <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/global.css" %}">
+  <link rel='stylesheet' href="{% static "baseApp/BE-THEME/css/structure.css" %}">
+{% endblock head_extra %}
+
+
+{% block body_content %}
+        <!-- Slider -->
+        <div class="container">
+            <section class="pozo-section-slider pt-130">
+                <div class="next-container-center">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <!-- Swiper Slides -->
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-block">
+                                    <div class="swiper-slide-block-img animate-box" data-animate-effect="fadeInLeft" data-swiper-parallax-y="70%">
+                                        <a href="project-page.html"> <img src="{% static "baseApp/POZO/LTR/images/slider/2.jpg" %}" alt=""> </a>
+                                    </div>
+                                    <div class="swiper-slide-block-text animate-box" data-animate-effect="fadeInRight">
+                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">Saeede Keshvari</h2>
+                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Artist</h3>
+                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
+                                        <!-- <a data-swiper-parallax-x="-30%" style="z-index: 5;" class="next-link" href="project-page.html">Discover</a>  -->
+                                        <span data-swiper-parallax-y="60%" class="next-number">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-block">
+                                    <div class="swiper-slide-block-img" data-swiper-parallax-y="70%">
+                                        <a href="project-page-2.html"><img src="{% static "baseApp/POZO/LTR/images/slider/4.jpg" %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide-block-text">
+                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">Rumi</h2>
+                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Woman is a ray of God</h3>
+                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
+                                        <!-- <a data-swiper-parallax-x="-30%" class="next-link" href="project-page-2.html">Discover</a>  -->
+                                        <span data-swiper-parallax-y="60%" class="next-number animate-box" data-animate-effect="fadeInUp">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-block">
+                                    <div class="swiper-slide-block-img" data-swiper-parallax-y="70%">
+                                        <a href="project-page-2.html"> <img src="{% static "baseApp/POZO/LTR/images/slider/6.jpg" %}" alt=""> </a>
+                                    </div>
+                                    <div class="swiper-slide-block-text">
+                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">My Beautiful Girl</h2>
+                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Poem by Rumi</h3>
+                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
+                                        <!-- <a data-swiper-parallax-x="-30%" class="next-link" href="project-page-2.html">Discover</a> -->
+                                        <span data-swiper-parallax-y="60%" class="next-number">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next animate-box" data-animate-effect="fadeInRight"> <i class="fad fa-long-arrow-alt-right fa-2x"></i> </div>
+                        <div class="swiper-button-prev animate-box" data-animate-effect="fadeInLeft"> <i class="fad fa-long-arrow-alt-left fa-2x"></i> </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery -->
+        <div class="pozo-section pt-80">
+          <div class="container">
+                <div class="section-head text-center mb-5 col-md-12 animate-box" data-animate-effect="fadeInUp">
+                    <h4>Photo Gallery</h4>
+                </div>
+                <!-- Mansonry -->
+                {% include "baseApp/POZO/LTR/art/mansonry-gallery.html" %}
+          </div>
+        </div>
+{% endblock body_content %}
+
+
+{% block body_JS %}
+
+  <!-- BE-THEME for Mansonry Gallery section -->
+  <script src="{% static "baseApp/POZO/LTR/js/plugins/jquery-plugins-BeTheme.js" %}"></script>
+  <script src="{% static "baseApp/POZO/LTR/js/scripts-BeTheme.js" %}"></script>
+
+  <script type="text/javascript">
+
+    $('[data-fancybox="images"]').fancybox({
+    	protect: true,
+      loop: true,
+    });
+
+  </script>
+{% endblock body_JS %}

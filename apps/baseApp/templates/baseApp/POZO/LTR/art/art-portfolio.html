@@ -1,0 +1,27 @@
+{% extends "baseApp/POZO/LTR/art/base.html" %}
+{% load static %}
+
+
+{% block body_content %}
+<!-- Projects -->
+<section class="projects pt-130 mb-60">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-md-12 text-center animate-box" data-animate-effect="fadeInUp">
+                <h4>My Art Gallery</h4>
+            </div>
+            {% for item in all_arts %}
+              <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="{{item.image_main.url}}" alt=""> </div>
+                    <div class="con">
+                        <h5><a href="{% url "baseApp:art_detail" slug=item.slug %}">{{item.title}}</a></h5>
+                        <a href="{% url "baseApp:art_detail" slug=item.slug %}"><i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock body_content %}
