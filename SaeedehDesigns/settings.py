@@ -45,7 +45,12 @@ SECRET_KEY = secrets_dict['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(secrets_dict['DEBUG'])
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost',
+                 '127.0.0.1',
+                 '178.128.226.80',
+                 'www.saeedehdesigns.com',
+                 'saeedehdesigns.com',
+]
 
 
 
