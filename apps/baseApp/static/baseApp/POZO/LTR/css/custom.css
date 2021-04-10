@@ -27,7 +27,10 @@
 #social-footer li {
   margin-left: 20px;
 }
-
+.projects {
+  padding-left: 15%;
+  padding-right: 15%;
+}
 .footer-logo img {
   width: 50%;
 }
@@ -113,6 +116,10 @@
 }
 
 @media only screen and (max-width: 767px){
+  .projects {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .nastalig {
     font-family: IranNastaliq,'IranNastaliq',tahoma;
     font-size: 16px;

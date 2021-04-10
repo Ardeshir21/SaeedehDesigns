@@ -10,7 +10,7 @@ PAGE_CHOICES = [('HOME', 'Homepage'),
 
 class Banner(models.Model):
     image = models.ImageField(upload_to='baseApp/banners/', null=True, blank=True,
-                                help_text='HOME: 1920x850, ABOUT: 1920x400')
+                                help_text='HOME: 990x750, ABOUT: any')
     title = models.CharField(max_length=110, null=True, blank=True)
     sub_title = models.CharField(max_length=110, null=True, blank=True)
     title_fa = models.CharField(max_length=110, null=True, blank=True)
