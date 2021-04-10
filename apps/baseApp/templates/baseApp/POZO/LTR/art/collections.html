@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head_title %}
-  <title>{{Title}} - Saeedeh Arts</title>
+  <title>Saeedeh Art Collections</title>
   <meta name="description" content="">
 {% endblock head_title %}
 
@@ -12,19 +12,19 @@
     <div class="container">
         <div class="row">
             <div class="section-head col-md-12 text-center animate-box" data-animate-effect="fadeInUp">
-                <h4>{{Title}}</h4>
+                <h4>My Collections</h4>
             </div>
-            {% for item in all_arts %}
-              <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+            {% for item in collections %}
+              <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
                 <div class="item">
                     <div class="position-re o-hidden">
-                      <a href="{% url "baseApp:art_detail" collection_slug=item.collection.slug art_slug=item.slug %}">
+                      <a href="{% url "baseApp:art_portfolio" collection_slug=item.slug %}">
                         <img src="{{item.image_main.url}}" alt="">
                       </a>
                     </div>
                     <div class="con">
-                        <h5><a href="{% url "baseApp:art_detail" collection_slug=item.collection.slug art_slug=item.slug %}">{{item.title}}</a></h5>
-                        <a href="{% url "baseApp:art_detail" collection_slug=item.collection.slug art_slug=item.slug %}"><i class="fa fa-long-arrow-right"></i></a>
+                        <h5><a href="{% url "baseApp:art_portfolio" collection_slug=item.slug %}">{{item.name}}</a></h5>
+                        <a href="{% url "baseApp:art_portfolio" collection_slug=item.slug %}"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

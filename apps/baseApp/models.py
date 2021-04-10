@@ -4,15 +4,68 @@ from django.utils import timezone
 
 # Variables
 YES_NO_CHOICES = [(True, 'Yes'), (False, 'No')]
+PAGE_CHOICES = [('HOME', 'Homepage'),
+                ('ABOUT', 'About')]
 
+
+class Banner(models.Model):
+    image = models.ImageField(upload_to='baseApp/banners/', null=True, blank=True,
+                                help_text='HOME: 1920x850, ABOUT: 1920x400')
+    title = models.CharField(max_length=110, null=True, blank=True)
+    sub_title = models.CharField(max_length=110, null=True, blank=True)
+    title_fa = models.CharField(max_length=110, null=True, blank=True)
+    sub_title_fa = models.CharField(max_length=110, null=True, blank=True)
+    description = models.TextField(max_length=200, null=True, blank=True)
+    description_fa = models.TextField(max_length=200, null=True, blank=True)
+    target_url = models.URLField(max_length = 700, null=True, blank=True)
+    display_order = models.PositiveIntegerField(default=1, null=True, blank=True)
+    useFor = models.CharField(max_length=50, choices=PAGE_CHOICES, null=True, blank=True)
+    active = models.BooleanField(choices=YES_NO_CHOICES, default=False)
+
+    def __str__(self):
+            return "{}: banner for {}".format(self.title, self.useFor)
+
+    class Meta():
+        ordering = ['display_order']
+
+class Collection(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    name_fa = models.CharField(max_length=100, unique=True, null=True, blank=True)
+    description = models.TextField(max_length=500, null=True, blank=True)
+    description_fa = models.TextField(max_length=500, null=True, blank=True)
+    image_main = models.ImageField(upload_to='baseApp/art/', null=True,
+                                help_text='Less than 3MB')
+    display_order = models.PositiveIntegerField(default=1, null=True, blank=True)
+    slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, allow_unicode=True)
+    active = models.BooleanField(choices=YES_NO_CHOICES, default=True)
+    created = models.DateField(editable=False)
+    updated = models.DateField(editable=False, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta():
+        ordering  = ['display_order']
+
+    def save(self, *args, **kwargs):
+        ''' On save, update timestamps '''
+        # Update Date
+        if not self.id:
+            self.created = timezone.now()
+        self.updated = timezone.now()
+        return super(Collection, self).save(*args, **kwargs)
+
+    # def get_absolute_url(self):
+    #     return reverse('baseApp:collections', args=(self.id,))
 
 class Art(models.Model):
+    collection = models.ForeignKey(Collection, related_name='collectionArts', on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=100, unique=True, null=True, blank=True)
-    title_fa = models.CharField(max_length=100, unique=True, null=True, blank=True)
-    description_1 = models.TextField(max_length=500, unique=True, null=True, blank=True)
-    description_2 = models.TextField(max_length=500, unique=True, null=True, blank=True)
-    description_fa_1 = models.TextField(max_length=500, unique=True, null=True, blank=True)
-    description_fa_2 = models.TextField(max_length=500, unique=True, null=True, blank=True)
+    title_fa = models.CharField(max_length=100, null=True, blank=True)
+    description_1 = models.TextField(max_length=500, null=True, blank=True)
+    description_2 = models.TextField(max_length=500, null=True, blank=True)
+    description_fa_1 = models.TextField(max_length=500, null=True, blank=True)
+    description_fa_2 = models.TextField(max_length=500, null=True, blank=True)
     image_main = models.ImageField(upload_to='baseApp/art/', null=True,
                                 help_text='Less than 3MB')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, allow_unicode=True)
@@ -59,9 +112,9 @@ class ArtImages(models.Model):
 ########### Design ###########
 class Design(models.Model):
     title = models.CharField(max_length=100, unique=True, null=True, blank=True)
-    title_fa = models.CharField(max_length=100, unique=True, null=True, blank=True)
-    description = models.TextField(max_length=500, unique=True, null=True, blank=True)
-    description_fa = models.TextField(max_length=500, unique=True, null=True, blank=True)
+    title_fa = models.CharField(max_length=100, null=True, blank=True)
+    description = models.TextField(max_length=500, null=True, blank=True)
+    description_fa = models.TextField(max_length=500, null=True, blank=True)
     image_main = models.ImageField(upload_to='baseApp/design/', null=True,
                                 help_text='Less than 3MB')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, allow_unicode=True)

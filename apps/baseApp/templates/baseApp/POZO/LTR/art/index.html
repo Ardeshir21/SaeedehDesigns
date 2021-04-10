@@ -4,7 +4,7 @@
 
 
 {% block head_title %}
-  <title>Saeedeh Designs</title>
+  <title>Saeedeh Arts</title>
   <meta name="description" content="">
 {% endblock head_title %}
 
@@ -23,48 +23,35 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                           <!-- Swiper Slides -->
+                          {% for item in banners %}
                             <div class="swiper-slide">
                                 <div class="swiper-slide-block">
                                     <div class="swiper-slide-block-img animate-box" data-animate-effect="fadeInLeft" data-swiper-parallax-y="70%">
-                                        <a href="project-page.html"> <img src="{% static "baseApp/POZO/LTR/images/slider/2.jpg" %}" alt=""> </a>
+                                        {% if item.target_url %}
+                                        <a href="{{item.target_url}}"> <img src={{item.image.url}} alt=""> </a>
+                                        {% else %}
+                                        <img src={{item.image.url}} alt="">
+                                        {% endif %}
                                     </div>
                                     <div class="swiper-slide-block-text animate-box" data-animate-effect="fadeInRight">
-                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">Saeede Keshvari</h2>
-                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Artist</h3>
-                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
-                                        <!-- <a data-swiper-parallax-x="-30%" style="z-index: 5;" class="next-link" href="project-page.html">Discover</a>  -->
-                                        <span data-swiper-parallax-y="60%" class="next-number">1</span>
+                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">{{item.title}}</h2>
+
+                                        {% if item.sub_title %}
+                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">{{item.sub_title}}</h3>
+                                        {% endif %}
+
+                                        {% if item.description %}
+                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">{{item.description}}</p>
+                                        {% endif %}
+
+                                        {% if item.target_url %}
+                                        <a data-swiper-parallax-x="-30%" style="z-index: 5;" class="next-link" href="{{item.target_url}}">Discover more</a>
+                                        {% endif %}
+                                        <span data-swiper-parallax-y="60%" class="next-number">{{forloop.counter}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-slide-block">
-                                    <div class="swiper-slide-block-img" data-swiper-parallax-y="70%">
-                                        <a href="project-page-2.html"><img src="{% static "baseApp/POZO/LTR/images/slider/4.jpg" %}" alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide-block-text">
-                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">Rumi</h2>
-                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Woman is a ray of God</h3>
-                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
-                                        <!-- <a data-swiper-parallax-x="-30%" class="next-link" href="project-page-2.html">Discover</a>  -->
-                                        <span data-swiper-parallax-y="60%" class="next-number animate-box" data-animate-effect="fadeInUp">2</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-slide-block">
-                                    <div class="swiper-slide-block-img" data-swiper-parallax-y="70%">
-                                        <a href="project-page-2.html"> <img src="{% static "baseApp/POZO/LTR/images/slider/6.jpg" %}" alt=""> </a>
-                                    </div>
-                                    <div class="swiper-slide-block-text">
-                                        <h2 data-swiper-parallax-x="-60%" class="next-main-title">My Beautiful Girl</h2>
-                                        <h3 data-swiper-parallax-x="-50%" class="next-main-subtitle">Poem by Rumi</h3>
-                                        <p data-swiper-parallax-x="-40%" class="next-paragraph">Quisque pellentesque odio ut libero iaculis, nec fringilla sapien tincidunt. Sed laoreet pulvinar ex sed egestas. Vestibulum pharetra enim the dui tempus in blandit nulla egestas.</p>
-                                        <!-- <a data-swiper-parallax-x="-30%" class="next-link" href="project-page-2.html">Discover</a> -->
-                                        <span data-swiper-parallax-y="60%" class="next-number">3</span>
-                                    </div>
-                                </div>
-                            </div>
+                          {% endfor %}
                         </div>
                         <div class="swiper-button-next animate-box" data-animate-effect="fadeInRight"> <i class="fad fa-long-arrow-alt-right fa-2x"></i> </div>
                         <div class="swiper-button-prev animate-box" data-animate-effect="fadeInLeft"> <i class="fad fa-long-arrow-alt-left fa-2x"></i> </div>

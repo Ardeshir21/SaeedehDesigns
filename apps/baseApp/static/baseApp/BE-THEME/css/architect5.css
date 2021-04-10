@@ -2262,7 +2262,7 @@ form input.display-none {
 		width: 100%!important;
 	}
 	.section_wrapper, .container, .four.columns .widget-area {
-		width: calc(100% - 67px)!important;
+		width: calc(100% - 55px)!important;
 	}
 	.section_wrapper .mcb-wrap, .section_wrapper .column, .container .column, .sections_group, .four.columns {
 		margin: 0;

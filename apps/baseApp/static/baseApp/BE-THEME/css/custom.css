@@ -225,9 +225,12 @@
     padding: 60px 0;
 }
 .footer-logo img {
-  width: 30%;
+  width: 40%;
 }
 
+.footer-logo-about img {
+  width: 50%;
+}
 .pozo-social-icons {
     margin-bottom: 15px;
 }
@@ -243,8 +246,6 @@
     color: #888;
     font-size: 13px;
     font-weight: 400;
-    margin-right: 10px;
-    text-align: right;
 }
 .pozo-copyright span {
     font-size: 13px;
@@ -338,10 +339,10 @@ li.pozo-social-icons-item {
     height: auto;
   }
   .footer-logo img {
-    width: 30%;
+    width: 50%;
   }
-  #logo-footer-mobile {
-    text-align: center;
+  #footer-container {
+    width: 260px !important;
   }
   .contact-me-bg {
     font-size:20px;

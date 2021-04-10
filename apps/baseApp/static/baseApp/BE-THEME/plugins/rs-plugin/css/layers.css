@@ -1956,7 +1956,7 @@ website:   	http://www.themepunch.com
 
 .tp-caption.NotGeneric-BigButton:hover,.NotGeneric-BigButton:hover
 {
-	background-color:rgba(0,0,0,0);
+	background-color:rgba(255,255,255,0.2);
 	border-color:rgba(255,255,255,1.00);
 	border-radius:0 0 0 0;
 	border-style:solid;

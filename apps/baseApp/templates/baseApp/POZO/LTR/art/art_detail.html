@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block head_title %}
+  <title>{{the_art.title}} - Saeedeh Art</title>
+  <meta name="description" content="">
+{% endblock head_title %}
 
 {% block head_extra %}
   <link rel="stylesheet" href="{% static "baseApp/POZO/LTR/css/owl.carousel.css" %}">
@@ -80,7 +84,7 @@
     </div>
     <div class="row justify-content-md-center mb-60 mt-120">
       <div class="col-md-auto" style="position:relative; right:5px;">
-        <a href="{% url "baseApp:art_portfolio" %}" id="back-btn" role="button" aria-disabled="true"> <i class="fad fa-long-arrow-left"></i> Back to Gallery</a>
+        <a href="{% url "baseApp:art_portfolio" collection_slug=the_art.collection.slug %}" id="back-btn" role="button" aria-disabled="true"> <i class="fad fa-long-arrow-left"></i> Back to Gallery</a>
       </div>
     </div>
 </div>

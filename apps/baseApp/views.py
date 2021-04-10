@@ -58,8 +58,9 @@ class ArtGalleryIndexView(generic.TemplateView):
 
         # It must be checked in the method not in attributes
         current_lang = translation.get_language()
-        # models
+        # from models
         context['featuredArts'] = models.Art.objects.filter(featured=True)
+        context['banners'] = models.Banner.objects.filter(useFor='HOME', active=True)
         return context
 
 # About View
@@ -82,11 +83,50 @@ class ArtAboutMeView(generic.TemplateView):
 
         # It must be checked in the method not in attributes
         current_lang = translation.get_language()
-        # Categories based on current language Navbar
+        context['about_banners'] = models.Banner.objects.filter(useFor='ABOUT', active=True)
+        return context
+
+# Collection View
+class CollectionsView(generic.ListView):
+    context_object_name = 'collections'
+    model = models.Collection
+
+    def get_queryset(self, **kwargs):
+        result = super(CollectionsView, self).get_queryset()
+        result= result.filter(active=True)
+        return result
+
+    # Select template based on requested language
+    def get_template_names(self):
+        current_lang = translation.get_language()
+        # RTL languages
+        if current_lang == 'fa':
+            return ["baseApp/POZO/RTL/art/collections.html"]
+        # LTR languages
+        else:
+            return ["baseApp/POZO/LTR/art/collections.html"]
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Append shared extraContext
+        context.update(get_extra_context())
+
+        # It must be checked in the method not in attributes
+        current_lang = translation.get_language()
         return context
 
 # Gallery View
-class ArtPortfolioView(generic.TemplateView):
+class ArtPortfolioView(generic.ListView):
+    context_object_name = 'all_arts'
+    model = models.Art
+
+    # Arts from the slug collection
+    def get_queryset(self, **kwargs):
+        result = super(ArtPortfolioView, self).get_queryset()
+        result= result.filter(collection__slug=self.kwargs['collection_slug'], active=True)
+        return result
+
     def get_template_names(self):
         current_lang = translation.get_language()
         if current_lang == 'fa':
@@ -101,9 +141,8 @@ class ArtPortfolioView(generic.TemplateView):
         context.update(get_extra_context())
         # It must be checked in the method not in attributes
         current_lang = translation.get_language()
-
-        # Arts
-        context['all_arts'] = models.Art.objects.filter(active__exact=True)
+        # Page Title
+        context['Title'] = models.Collection.objects.get(slug=self.kwargs['collection_slug']).name
         return context
 
 # Art Details
@@ -119,7 +158,8 @@ class ArtDetailView(generic.DetailView):
             return ["baseApp/POZO/LTR/art/art_detail.html"]
 
     def get_object(self, **kwargs):
-        singleResult = self.model.objects.get(slug=self.kwargs['slug'], active=True)
+        singleResult = self.model.objects.get(collection__slug=self.kwargs['collection_slug'],
+                                                slug=self.kwargs['art_slug'], active=True)
         # To implement save method on the model which adds view count
         singleResult.save()
         return singleResult

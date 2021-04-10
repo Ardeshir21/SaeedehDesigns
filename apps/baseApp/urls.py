@@ -15,8 +15,9 @@ urlpatterns = [
     # Art
     path('art-gallery/', views.ArtGalleryIndexView.as_view(), name='art_index'),
     # path('art-gallery/about-me/', views.ArtAboutMeView.as_view(), name='art_about_me'),
-    path('art-gallery/portfolio/', views.ArtPortfolioView.as_view(), name='art_portfolio'),
-    path('art-gallery/portfolio/<slug:slug>', views.ArtDetailView.as_view(), name='art_detail'),
+    path('art-gallery/collections/', views.CollectionsView.as_view(), name='collections'),
+    path('art-gallery/collections/<slug:collection_slug>/', views.ArtPortfolioView.as_view(), name='art_portfolio'),
+    path('art-gallery/collections/<slug:collection_slug>/<slug:art_slug>', views.ArtDetailView.as_view(), name='art_detail'),
     # Interior Design
     path('interior-design/', views.InteriorDesignIndexView.as_view(), name='design_index'),
     # path('interior-design/about-me/', views.DesignAboutMeView.as_view(), name='design_about_me'),

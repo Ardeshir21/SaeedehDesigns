@@ -1,13 +1,21 @@
 from django.contrib import admin
 from django.db import models
 from .models import (
+                    Collection,
                     Art,
                     ArtImages,
                     Design,
-                    DesignImages
+                    DesignImages,
+                    Banner
                     )
 
 
+class CollectionAdmin(admin.ModelAdmin):
+
+    list_filter = ['name']
+    list_display = ['id', 'name', 'active', 'display_order']
+    list_editable = ['active', 'display_order']
+    prepopulated_fields = {'slug': ('name',)}
 
 class ArtImagesInline(admin.TabularInline):
     model = ArtImages
@@ -16,8 +24,8 @@ class ArtImagesInline(admin.TabularInline):
 
 class ArtAdmin(admin.ModelAdmin):
 
-    list_filter = ['title']
-    list_display = ['id', 'title', 'active', 'featured']
+    list_filter = ['collection', 'title']
+    list_display = ['id', 'title', 'collection', 'active', 'featured']
     list_editable = ['active', 'featured']
     prepopulated_fields = {'slug': ('title',)}
 
@@ -42,12 +50,14 @@ class DesignAdmin(admin.ModelAdmin):
     inlines = [
         DesignImagesInline,
     ]
-# class BannerAdmin(admin.ModelAdmin):
-#     list_display = ['id', 'title', 'useFor', 'active']
-#     list_editable = ['useFor', 'active']
+
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'useFor', 'display_order', 'active']
+    list_editable = ['useFor', 'active', 'display_order']
 
 
 
 admin.site.register(Art, ArtAdmin)
 admin.site.register(Design, DesignAdmin)
-# admin.site.register(Banner, BannerAdmin)
+admin.site.register(Collection, CollectionAdmin)
+admin.site.register(Banner, BannerAdmin)
