@@ -14,10 +14,10 @@
 /*
 |--------------------------------------------------------------------------
 |  1.0 Grid
-|  
+|
 |--------------------------------------------------------------------------
 |
-| 
+|
 |
 */
 /* #Base 1200 Grid
@@ -318,10 +318,10 @@ body:not(.template-slider) #Content {
 /*
 |--------------------------------------------------------------------------
 |  2.0 Layout
-|  
+|
 |--------------------------------------------------------------------------
 |
-| 
+|
 |
 */
 /* #Global
@@ -718,7 +718,7 @@ body.nice-scroll:not(.layout-boxed) {
     display: none;
 }
 
-/* 
+/*
 	#Sliding-top .widgets_wrapper .widget ul { margin: 0 0 15px 30px; line-height: 21px; }
 	#Sliding-top .widgets_wrapper .widget ul li { list-style:disc outside; padding: 3px 0; }
 	*/
@@ -1079,7 +1079,7 @@ body.nice-scroll:not(.layout-boxed) {
 
 /* #Owl-pagination
 ================================================== */
-/* #NEXT / PREV NAVI 
+/* #NEXT / PREV NAVI
 ================================================== */
 /* Section: Highlight
 ================================================== */
@@ -4101,7 +4101,7 @@ body:not(.with_aside) .portfolio_group.list .portfolio-item .portfolio-item-fw-w
 }
 
 #Footer .footer_action a:hover {
-	text-decoration:none;	
+	text-decoration:none;
 }
 
 #Footer .widgets_wrapper {
@@ -5069,10 +5069,10 @@ body.layout-boxed .vc_row-no-padding .wpb_column {
 /*
 |--------------------------------------------------------------------------
 |  3.0 Responsive-1240
-|  
+|
 |--------------------------------------------------------------------------
 |
-| 
+|
 |
 */
 html,body {
@@ -6168,10 +6168,10 @@ html,body {
 /*
 |--------------------------------------------------------------------------
 |  4.0 Responsive
-|  
+|
 |--------------------------------------------------------------------------
 |
-| 
+|
 |
 */
 body {
@@ -6548,7 +6548,7 @@ body {
     }
 
     .section_wrapper,.container,.four.columns {
-        width: 260px !important;
+        width: 99% !important;
     }
 
     .left-sidebar .items_group,.right-sidebar .items_group,.with_aside .content_wrapper {

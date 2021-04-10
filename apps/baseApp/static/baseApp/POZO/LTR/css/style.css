@@ -697,9 +697,13 @@ a {
         box-shadow: none;
         transition: all 200ms linear;
     }
+    .nav-item {
+      line-height: 40px;
+    }
     .nav-item:after {
         height: 0px;
     }
+
     .pozo-navigation-wrap {
         background: #fff;
     }
@@ -721,7 +725,7 @@ a {
 .swiper-button-prev {
     width: 50px;
     height: 50px;
-    font-size: 12px;
+    font-size: 25px;
     background-image: none;
     background-color: #fff;
     z-index: 2;
@@ -1610,10 +1614,23 @@ ul.team-info-social li {
     .pozo-form-wrapper {
         width: 58%;
     }
+    .nav-item {
+      line-height: 40px;
+    }
 }
 @media (max-width: 540px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
     .pozo-form-block-child li > .img-wrapper {
         margin-left: 30px;
+    }
+    .nav-item {
+      line-height: 40px;
     }
     .pozo-form-wrapper {
         width: 61%;
