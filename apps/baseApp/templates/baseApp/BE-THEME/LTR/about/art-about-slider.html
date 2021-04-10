@@ -31,6 +31,7 @@
                 class="rev-slidebg" data-no-retina>
 
                 <!-- LAYERS -->
+                {% if item.title %}
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption News-Title tp-resizeme rs-parallaxlevel-0"
                  id="slide-51-layer-1"
@@ -40,7 +41,7 @@
                  data-voffset="['530','530','330','230']"
                  data-width="700"
                  data-height="133"
-                 data-fontsize="['50', '50', '40', '32']"
+                 data-fontsize="['41', '41', '41', '32']"
                  data-whitespace="normal"
                  data-transform_idle="o:1;"
                  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
@@ -76,7 +77,9 @@
                   width="350" height="4" data-ww="['350px','350px','350px','350px']"
                   data-hh="['4px','4px','4px','4px']" data-no-retina>
                 </div>
+                {% endif %}
 
+                {% if item.sub_title %}
                 <!-- LAYER NR. 3 -->
                 <div class="tp-caption News-Subtitle tp-resizeme rs-parallaxlevel-0"
                 id="slide-51-layer-3"
@@ -99,6 +102,7 @@
                 style="z-index: 7; white-space: nowrap;">
                 {{ item.sub_title }}
                 </div>
+                {% endif %}
             </li>
           {% endfor %}
         </ul>
