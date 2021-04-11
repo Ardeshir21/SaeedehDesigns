@@ -66,6 +66,8 @@ class Art(models.Model):
     description_2 = models.TextField(max_length=500, null=True, blank=True)
     description_fa_1 = models.TextField(max_length=500, null=True, blank=True)
     description_fa_2 = models.TextField(max_length=500, null=True, blank=True)
+    description_fa_3 = models.TextField(max_length=500, null=True, blank=True)
+    description_fa_4 = models.TextField(max_length=500, null=True, blank=True)
     image_main = models.ImageField(upload_to='baseApp/art/', null=True,
                                 help_text='Less than 3MB')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, allow_unicode=True)

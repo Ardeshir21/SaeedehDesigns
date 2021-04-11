@@ -33,19 +33,52 @@
             {% endif %}
           </div>
         </div>
+
         <!-- Description Farsi -->
-        <div class="row ustify-content-md-center mt-40 mb-30">
-          <div class="col">
-            {% if the_art.description_fa_1 %}
-            <p class="nastalig">{{the_art.description_fa_1}}</p>
-            {% endif %}
+        {% if the_art.description_fa_4 %}
+          <!-- First Row -->
+          <div class="row ustify-content-md-center mt-40">
+              <div class="col">
+                <p class="nastalig">{{the_art.description_fa_1}}</p>
+              </div>
+              <div class="col">
+                <p class="nastalig">{{the_art.description_fa_2}}</p>
+              </div>
           </div>
-          <div class="col">
-            {% if the_art.description_fa_2 %}
-            <p class="nastalig">{{the_art.description_fa_2}}</p>
-            {% endif %}
+
+          <!-- Second Row -->
+          <div class="row ustify-content-md-center mt-10 mb-30">
+              <div class="col">
+                <p class="nastalig">{{the_art.description_fa_3}}</p>
+              </div>
+              <div class="col">
+                <p class="nastalig">{{the_art.description_fa_4}}</p>
+              </div>
           </div>
-        </div>
+        <!-- One row of Poem -->
+        {% else %}
+          <div class="row ustify-content-md-center mt-40 mb-30">
+                {% if the_art.description_fa_2 %}
+                  <div class="col">
+                    {% if the_art.description_fa_1 %}
+                    <p class="nastalig">{{the_art.description_fa_1}}</p>
+                    {% endif %}
+                  </div>
+                  <div class="col">
+                    {% if the_art.description_fa_2 %}
+                    <p class="nastalig">{{the_art.description_fa_2}}</p>
+                    {% endif %}
+                  </div>
+                <!-- One description available -->
+                {% else %}
+                  <div class="col-12">
+                    {% if the_art.description_fa_1 %}
+                    <p class="nastalig">{{the_art.description_fa_1}}</p>
+                    {% endif %}
+                  </div>
+                {% endif %}
+            </div>
+        {% endif %}
         <!-- Description 2 -->
         <div class="row mb-60">
           <div class="col">

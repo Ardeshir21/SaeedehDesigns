@@ -1332,6 +1332,11 @@ ul.team-info-social li {
     -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
+.projects .item:hover .con h5, .projects .item:hover .con h5 a {
+  color: white;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
 .projects .item:hover .con {
     bottom: 0;
 }
@@ -1343,7 +1348,7 @@ ul.team-info-social li {
 .projects .item .con {
     padding: 30px;
     position: absolute;
-    bottom: -50px;
+    bottom: -10px;
     left: 0;
     width: 100%;
     -webkit-transition: all .3s;
@@ -1373,12 +1378,16 @@ ul.team-info-social li {
 }
 .projects .item .con h5 {
     font-size: 20px;
-    color: #fff;
-    margin-bottom: 15px;
+    color: black;
+    margin-bottom: 30px;
     text-transform: none;
+    -webkit-transition: all .6s;
+    transition: all .6s;
 }
 .projects .item .con h5 a {
-    color: #fff;
+    color: black;
+    -webkit-transition: all .6s;
+    transition: all .6s;
 }
 .projects .item .con p {
     color: #fff;
@@ -1619,7 +1628,6 @@ ul.team-info-social li {
     }
 }
 @media (max-width: 540px) {
-
     .swiper-button-next,
     .swiper-button-prev {
         width: 30px;
