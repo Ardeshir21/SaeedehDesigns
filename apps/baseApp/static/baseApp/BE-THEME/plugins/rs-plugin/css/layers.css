@@ -1598,7 +1598,7 @@ website:   	http://www.themepunch.com
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
-	font-family:Raleway;
+	font-family: "Cormorant Garamond";
 	font-size:70px;
 	font-style:normal;
 	font-weight:800;
@@ -1606,7 +1606,9 @@ website:   	http://www.themepunch.com
 	padding:10px 0;
 	text-decoration:none;
 }
-
+.tp-caption.NotGeneric-Title .tp-splitted {
+		font-family: "Cormorant Garamond";
+}
 .tp-caption.NotGeneric-SubTitle,.NotGeneric-SubTitle
 {
 	background-color:transparent;
