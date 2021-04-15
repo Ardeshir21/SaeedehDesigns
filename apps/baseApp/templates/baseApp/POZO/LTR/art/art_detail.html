@@ -37,7 +37,7 @@
         <!-- Description Farsi -->
         {% if the_art.description_fa_4 %}
           <!-- First Row -->
-          <div class="row ustify-content-md-center mt-40">
+          <div class="row ustify-content-md-center mt-40 persian-poem">
               <div class="col">
                 <p class="nastalig">{{the_art.description_fa_1}}</p>
               </div>
@@ -47,7 +47,7 @@
           </div>
 
           <!-- Second Row -->
-          <div class="row ustify-content-md-center mt-10 mb-30">
+          <div class="row ustify-content-md-center mt-10 mb-30 persian-poem">
               <div class="col">
                 <p class="nastalig">{{the_art.description_fa_3}}</p>
               </div>
@@ -57,17 +57,13 @@
           </div>
         <!-- One row of Poem -->
         {% else %}
-          <div class="row ustify-content-md-center mt-40 mb-30">
+          <div class="row ustify-content-md-center mt-40 mb-30 persian-poem">
                 {% if the_art.description_fa_2 %}
                   <div class="col">
-                    {% if the_art.description_fa_1 %}
                     <p class="nastalig">{{the_art.description_fa_1}}</p>
-                    {% endif %}
                   </div>
                   <div class="col">
-                    {% if the_art.description_fa_2 %}
                     <p class="nastalig">{{the_art.description_fa_2}}</p>
-                    {% endif %}
                   </div>
                 <!-- One description available -->
                 {% else %}

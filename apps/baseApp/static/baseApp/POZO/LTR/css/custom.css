@@ -39,6 +39,10 @@
   display: none;
 }
 
+.persian-poem {
+  direction: rtl;
+}
+
 .nastalig {
   font-family: IranNastaliq,'IranNastaliq',tahoma;
   font-size: 25px;
