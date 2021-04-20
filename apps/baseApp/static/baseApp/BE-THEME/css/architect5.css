@@ -21,16 +21,7 @@ input[type="date"], input[type="email"], input[type="number"], input[type="passw
 #sc_gallery-1 .gallery-caption {
 	margin-left: 0;
 }
-html {
-	background-image: url(../images/architect-body-bg.png);
-	background-repeat: repeat;
-	background-position: center top
-}
-#Footer {
-	background-image: url(../images/architect-body-bg.png);
-	background-repeat: repeat;
-	background-position: center top
-}
+
 @media only screen and (min-width: 1240px) {
 	body:not(.header-simple) #Top_bar #menu {
 		display: block !important
