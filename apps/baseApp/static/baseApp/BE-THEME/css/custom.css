@@ -136,6 +136,14 @@
     transition: all 1s ease;
 }
 
+.design-h4 {
+  color:#f8f8f8;
+  font-weight:300;
+  margin-top:20px;
+  line-height: 1.6;
+  font-size: 25px;
+}
+
 #press-slider {
   overflow: hidden;
   height: 550px;
@@ -350,6 +358,9 @@ li.pozo-social-icons-item {
     padding-top: 35%;
   }
 
+  .design-h4 {
+    font-size: 19px;
+  }
   #callButton {
     width: 70%;
     height: auto;
