@@ -1,0 +1,24 @@
+
+<form id="contactform" method="POST"> {% csrf_token %}
+    <!-- One Second (1/2) Column -->
+    <div class="column one-second">
+      {{form.name}}
+      {{form.name.errors}}
+    </div>
+    <!-- One Second (1/2) Column -->
+    <div class="column one-second">
+      {{form.client_email}}
+      {{form.client_email.errors}}
+    </div>
+    <div class="column one">
+      {{form.subject}}
+      {{form.subject.errors}}
+    </div>
+    <div class="column one">
+      {{form.message}}
+      {{form.message.errors}}
+    </div>
+    <div class="column one">
+        <button id="form-submit" type="submit" name="button">Send Message</button>
+    </div>
+</form>

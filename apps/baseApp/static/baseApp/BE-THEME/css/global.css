@@ -3031,13 +3031,7 @@ dl>dd:after {
 }
 /* Alerts ---------------------------------------------------------------------------- */
 
-.alert {
-	margin-bottom: 30px;
-	padding: 20px 55px 20px 90px;
-	position: relative;
-	-webkit-border-radius: 5px;
-	border-radius: 5px
-}
+
 .alert .alert_icon {
 	width: 60px;
 	height: 60px;

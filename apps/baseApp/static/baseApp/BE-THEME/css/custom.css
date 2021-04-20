@@ -168,6 +168,15 @@
   border-radius: 0.5%;
 }
 
+#form-submit {
+  width: 100%;
+}
+
+#form-submit:hover {
+  background-color: #9c5451;
+  color: white;
+}
+
 #slide-150-layer-3, #slide-150-layer-4 {
   text-align: center;
   border-width: 15px;

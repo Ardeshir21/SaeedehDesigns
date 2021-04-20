@@ -3,7 +3,8 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.utils import translation
-from . import models
+from . import models, forms
+from django.contrib import messages
 
 
 
@@ -64,7 +65,11 @@ class ArtGalleryIndexView(generic.TemplateView):
         return context
 
 # About View
-class ArtAboutMeView(generic.TemplateView):
+class ArtAboutMeView(generic.edit.FormView):
+
+    success_url = reverse_lazy('baseApp:about_me')
+    form_class = forms.ContactForm
+
     # Select template based on requested language
     def get_template_names(self):
         current_lang = translation.get_language()
@@ -74,6 +79,21 @@ class ArtAboutMeView(generic.TemplateView):
         # LTR languages
         else:
             return ["baseApp/BE-THEME/LTR/about/art-about.html"]
+
+    def form_valid(self, form):
+        # Success Message
+        current_lang = translation.get_language()
+        # RTL languages
+        if current_lang == 'fa':
+            messages.add_message(self.request, messages.SUCCESS, 'پیام شما با موفقیت ارسال شد.')
+        # LTR languages
+        else:
+            messages.add_message(self.request, messages.SUCCESS, 'Your message has been successfully sent.')
+
+        # This method is called when valid form data has been POSTed.
+        # current_url = resolve(request.path_info).url_name
+        form.send_email(current_url=self.request.build_absolute_uri())
+        return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
