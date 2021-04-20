@@ -13,21 +13,24 @@ from .models import (
 class CollectionAdmin(admin.ModelAdmin):
 
     list_filter = ['name']
-    list_display = ['id', 'name', 'active', 'display_order']
+    list_display = ['id', 'image_tag', 'name', 'active', 'display_order']
     list_editable = ['active', 'display_order']
     prepopulated_fields = {'slug': ('name',)}
+    readonly_fields = ['image_tag']
 
 class ArtImagesInline(admin.TabularInline):
     model = ArtImages
-    list_display = ['art', 'image', 'active', 'display_order']
+    list_display = ['art', 'image_tag', 'image', 'active', 'display_order']
     list_editable = ['display_order']
+    readonly_fields = ['image_tag']
 
 class ArtAdmin(admin.ModelAdmin):
 
     list_filter = ['collection', 'title']
-    list_display = ['id', 'title', 'collection', 'active', 'featured']
+    list_display = ['id', 'image_tag', 'title', 'collection', 'active', 'featured']
     list_editable = ['active', 'featured']
     prepopulated_fields = {'slug': ('title',)}
+    readonly_fields = ['image_tag']
 
     # other Inlines
     inlines = [
@@ -36,15 +39,17 @@ class ArtAdmin(admin.ModelAdmin):
 
 class DesignImagesInline(admin.TabularInline):
     model = DesignImages
-    list_display = ['design', 'image', 'active', 'display_order']
+    list_display = ['design', 'image_tag', 'image', 'active', 'display_order']
     list_editable = ['display_order']
+    readonly_fields = ['image_tag']
 
 class DesignAdmin(admin.ModelAdmin):
 
     list_filter = ['title']
-    list_display = ['id', 'title', 'active', 'featured']
+    list_display = ['id', 'image_tag', 'title', 'active', 'featured']
     list_editable = ['active', 'featured']
     prepopulated_fields = {'slug': ('title',)}
+    readonly_fields = ['image_tag']
 
     # other Inlines
     inlines = [
@@ -52,8 +57,9 @@ class DesignAdmin(admin.ModelAdmin):
     ]
 
 class BannerAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'useFor', 'display_order', 'active']
+    list_display = ['id', 'image_tag', 'title', 'useFor', 'display_order', 'active']
     list_editable = ['useFor', 'active', 'display_order']
+    readonly_fields = ['image_tag']
 
 
 

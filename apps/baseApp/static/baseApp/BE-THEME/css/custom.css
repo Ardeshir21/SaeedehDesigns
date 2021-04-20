@@ -10,6 +10,12 @@
 .padding-4-percent{
   padding-top: 4%;
 }
+.padding-15-percent{
+  padding-top: 15%;
+}
+.padding-35-percent{
+  padding-top: 35%;
+}
 .mb-120 {
     margin-bottom: 120px;}
 .mt-120 {
@@ -129,6 +135,12 @@
     -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
+
+#press-slider {
+  overflow: hidden;
+  height: 550px;
+}
+
 #side-image {
   animation-duration: 4s;
   animation-delay: 0.3s;
@@ -195,6 +207,10 @@
 
 #Content .contactMe-p p {
   color: #fff;
+}
+
+#design-main-img {
+  padding-top: 15%;
 }
 
 .design-slider {
@@ -330,6 +346,10 @@ li.pozo-social-icons-item {
 }
 
 @media only screen and (max-width: 767px){
+  #design-main-img {
+    padding-top: 35%;
+  }
+
   #callButton {
     width: 70%;
     height: auto;

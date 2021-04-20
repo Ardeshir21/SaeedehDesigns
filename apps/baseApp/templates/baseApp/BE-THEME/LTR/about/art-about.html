@@ -28,6 +28,10 @@
 <link rel="stylesheet" type="text/css" href="{% static "baseApp/BE-THEME/plugins/rs-plugin/css/layers.css" %}">
 <link rel="stylesheet" type="text/css" href="{% static "baseApp/BE-THEME/plugins/rs-plugin/css/navigation.css" %}">
 
+<!-- owlCarousel -->
+<link rel="stylesheet" href="{% static "baseApp/POZO/LTR/css/owl.carousel.css" %}">
+<link rel="stylesheet" href="{% static "baseApp/POZO/LTR/css/owl.theme.default.css" %}">
+
 {% endblock head_extra %}
 
 
@@ -144,4 +148,21 @@
           }); /*ready*/
       </script>
 
+
+        <script src="{% static "baseApp/POZO/LTR/js/plugins/owl.carousel.min.js" %}"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+              items: 1,
+              margin: 0,
+              loop: true,
+              dots: false,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              smartSpeed: 1000,
+              autoplayHoverPause: true,
+              nav: false,
+            });
+          });
+        </script>
 {% endblock body_JS %}
