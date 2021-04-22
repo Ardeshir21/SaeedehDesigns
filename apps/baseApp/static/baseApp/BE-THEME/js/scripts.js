@@ -1537,28 +1537,30 @@ jQuery(window).load(function() {
 	/* ---------------------------------------------------------------------------
 	 * Isotope
 	 * --------------------------------------------------------------------------- */
-	// Portfolio - Isotope
-	jQuery('.portfolio_wrapper  .isotope:not(.masonry-flat)').isotope({
-		itemSelector: '.portfolio-item',
-		layoutMode: 'fitRows'
-	});
-	// Portfolio - Masonry Flat
-	jQuery('.portfolio_wrapper .masonry-flat').isotope({
-		itemSelector: '.portfolio-item',
-		masonry: {
-			columnWidth: 1
-		}
-	});
-	// Blog & Portfolio - Masonry
-	jQuery('.masonry.isotope').isotope({
-		itemSelector: '.isotope-item',
-		layoutMode: 'masonry'
-	});
-	// Blog & Portfolio - Masonry
-		$('.isotope.masonry, .isotope.masonry-hover, .isotope.masonry-minimal').isotope({
-			itemSelector	: '.isotope-item',
-			layoutMode		: 'masonry',
-		});
+   // Portfolio - Isotope
+ 	jQuery('.portfolio_wrapper  .isotope:not(.masonry-flat)').isotope({
+ 		itemSelector: '.portfolio-item',
+ 		layoutMode: 'fitRows'
+ 	});
+ 	// Portfolio - Masonry Flat
+ 	jQuery('.portfolio_wrapper .masonry-flat').isotope({
+ 		itemSelector: '.portfolio-item',
+ 		masonry: {
+ 			columnWidth: 1
+ 		}
+ 	});
+ 	// Blog & Portfolio - Masonry
+ 	jQuery('.masonry.isotope').isotope({
+ 		itemSelector: '.isotope-item',
+ 		layoutMode: 'masonry',
+ 	});
+ 	// Blog & Portfolio - Masonry
+ 		$('.isotope.masonry, .isotope.masonry-hover, .isotope.masonry-minimal').isotope({
+ 			itemSelector	: '.isotope-item',
+ 			layoutMode		: 'masonry',
+ 		})
+ });
+
 
 	/* ---------------------------------------------------------------------------
 	 * Chart
@@ -2537,11 +2539,6 @@ jQuery(".demos-slider").height(panelH);
 	wc_checkout_login_form.init();
 
 	});
-
-
-
-
-
 
 })(jQuery);
 
