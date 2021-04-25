@@ -63,10 +63,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
 
     # My APPs
     'apps.baseApp',
     # 'apps.blogApp',
+
+    # Robot.txt
+    'robots',
 
     # for models Text editor
     # 'ckeditor',
@@ -124,6 +129,14 @@ DATABASES = {
     }
 }
 
+SITE_ID = 1
+
+# Robots.txt setup
+ROBOTS_SITEMAP_URLS = [
+    'https://www.saeedehdesigns.com/saeedeh-sitemap.xml',
+]
+ROBOTS_USE_SCHEME_IN_HOST = True
+ROBOTS_USE_HOST = False
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

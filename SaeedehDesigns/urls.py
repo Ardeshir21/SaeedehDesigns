@@ -20,7 +20,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # path('robots.txt', include('robots.urls')),
+    path('robots.txt', include('robots.urls')),
     path('AdminPage/', admin.site.urls),
     path('', include('apps.baseApp.urls')),
     # This is for Blog Editor in blogApp.models.py

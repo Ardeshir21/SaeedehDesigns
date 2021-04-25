@@ -67,8 +67,8 @@ class Collection(models.Model):
         self.updated = timezone.now()
         return super(Collection, self).save(*args, **kwargs)
 
-    # def get_absolute_url(self):
-    #     return reverse('baseApp:collections', args=(self.id,))
+    def get_absolute_url(self):
+        return reverse('baseApp:art_portfolio', args=(self.slug,))
 
 class Art(models.Model):
     collection = models.ForeignKey(Collection, related_name='collectionArts', on_delete=models.CASCADE, null=True)
@@ -113,8 +113,8 @@ class Art(models.Model):
         self.view += 1
         return super(Art, self).save(*args, **kwargs)
 
-    # def get_absolute_url(self):
-    #     return reverse('baseApp:project', args=(self.id,))
+    def get_absolute_url(self):
+        return reverse('baseApp:art_detail', args=(self.collection.slug, self.slug))
 
 class ArtImages(models.Model):
     art = models.ForeignKey(Art, related_name='artImages', on_delete=models.CASCADE)
@@ -170,8 +170,8 @@ class Design(models.Model):
         self.view += 1
         return super(Design, self).save(*args, **kwargs)
 
-    # def get_absolute_url(self):
-    #     return reverse('baseApp:project', args=(self.id,))
+    def get_absolute_url(self):
+        return reverse('baseApp:design_detail', args=(self.slug,))
 
 class DesignImages(models.Model):
     art = models.ForeignKey(Design, related_name='designImages', on_delete=models.CASCADE)

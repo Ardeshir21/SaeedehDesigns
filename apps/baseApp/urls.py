@@ -1,13 +1,14 @@
 from django.urls import path
 from django.contrib.sitemaps.views import sitemap
-from . import views
+from . import views, sitemaps
 
 app_name = 'baseApp'
 
-# sitemaps_dict = {'Static_sitemap': sitemaps.StaticSitemap,
-#                 'Product_sitemap': sitemaps.ProductSitemap,
-#                 'Product_Category_sitemap': sitemaps.Product_CategorySitemap,
-#                 }
+sitemaps_dict = {'Static_sitemap': sitemaps.StaticSitemap,
+                'Art_sitemap': sitemaps.ArtSitemap,
+                'Collection_sitemap': sitemaps.CollectionSitemap,
+                'Design_sitemap': sitemaps.DesignSitemap,
+                }
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
@@ -25,10 +26,10 @@ urlpatterns = [
     path('interior-design/portfolio/<slug:slug>', views.DesignDetailView.as_view(), name='design_detail'),
 
     # This is for sitemap.xml
-    # path('SanliSiteMap.xml', sitemap, {'sitemaps': sitemaps_dict},
-    #  name='django.contrib.sitemaps.views.sitemap'),
+    path('saeedeh-sitemap.xml', sitemap, {'sitemaps': sitemaps_dict},
+     name='django.contrib.sitemaps.views.sitemap'),
 ]
-#
-#
+
+
 # handler404 = 'apps.baseApp.views.error_404'
 # handler500 = 'apps.baseApp.views.error_500'
