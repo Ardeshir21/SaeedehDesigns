@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.utils import translation
 from . import models, forms
+from django.conf import settings
 from django.contrib import messages
 
 
@@ -11,6 +12,7 @@ from django.contrib import messages
 # Here is the Extra Context ditionary which is used in get_context_data of Views classes
 def get_extra_context():
     extraContext = {
+        'DEBUG_VALUE': settings.DEBUG,
         'from_python': _('SOMETHING'),
         }
     return extraContext
