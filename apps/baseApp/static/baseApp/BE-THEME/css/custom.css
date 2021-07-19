@@ -1,12 +1,9 @@
-/*
-|--------------------------------------------------------------------------
-|  Custom Styles
-|
-|--------------------------------------------------------------------------
-|
-|
-|
-*/
+
+.backlink-refer, .backlink-refer:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .padding-4-percent{
   padding-top: 4%;
 }
