@@ -35,23 +35,24 @@ class ContactForm(forms.Form):
         recipients = ['contact@saeedehdesigns.com', client_email]
         mail_subject = 'Saeedeh Received Your Message - {}'.format(client_subject)
 
-        message_edited = '''Dear {},
+        message_edited = '''
 
-Many thanks for interest and message.
-I have successfully received your below message. And I will contact you shortly.
+Thank you for writing to us.
+We have successfully received your message and we will be in touch soon.
 
-___________________________________________
-
-{}
-eMail Address: {}
-
-{}
-
-___________________________________________
-Kind Regards,
-Saeedeh Keshvari
+Saeedeh Designs Team
 https://www.saeedehdesigns.com
+___________________________________________
+
+{}
+email: {}
+
+Your message:
+{}
+
+___________________________________________
+
 '''
-        message_edited = message_edited.format(name, name, client_email, message)
+        message_edited = message_edited.format(name, client_email, message)
         send_mail(mail_subject, message_edited, 'contact@saeedehdesigns.com', recipients)
         pass
